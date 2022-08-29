@@ -183,7 +183,7 @@ int main(){
     min_student();
     avg_score();
     median_score();
-    mode_score;
+    mode_score();
     sd_score();
     show_grade();
 }
