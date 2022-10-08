@@ -31,14 +31,13 @@ void printList(struct Node* ptr)
 {
 	while (ptr->next != NULL) {
 		cout << ptr->coeff << "x^" << ptr->power ;
-	if( ptr->next!=NULL && ptr->next->coeff >=0)
-		cout << "+";
+		if( ptr->next!=NULL && ptr->next->coeff >=0)
+			cout << "+";
 
 		ptr = ptr->next;
 	}
 	cout << ptr->coeff << "\n";
 }
-
 void removeDuplicates(Node* start)
 {
 	Node *ptr1, *ptr2, *dup;
@@ -125,6 +124,8 @@ Node* polyadd(struct Node* poly1, struct Node* poly2,struct Node* polysum)
 			poly2 = poly2->next;
 		}
 	}
+	polysum = addnode(polysum, poly1->coeff, poly1->power);
+	polysum = addnode(polysum, poly2->coeff, poly2->power);
 	removeDuplicates(polysum);
     return polysum;
 }
